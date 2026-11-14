@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>404 | Page Not Found</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #080b14;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Background */
+
+body::before {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: #0066ff;
+    filter: blur(180px);
+    opacity: 0.13;
+    top: -200px;
+    left: -150px;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: #a100ff;
+    filter: blur(180px);
+    opacity: 0.12;
+    bottom: -200px;
+    right: -100px;
+}
+
+/* Main Container */
+
+.container {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    padding: 30px;
+}
+
+/* Small Heading */
+
+.tag {
+    font-size: 13px;
+    letter-spacing: 5px;
+    color: #00d9ff;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* 3D Number */
+
+.error-code {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(120px, 22vw, 270px);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: 8px;
+
+    color: #ffffff;
+
+    transform: perspective(600px)
+               rotateX(10deg)
+               rotateY(-8deg);
+
+    text-shadow:
+        1px 1px 0 #00c8ff,
+        2px 2px 0 #00b5ee,
+        3px 3px 0 #009edb,
+        4px 4px 0 #0084c4,
+        5px 5px 0 #006ca8,
+        6px 6px 0 #00558c,
+        7px 7px 0 #003f70,
+        8px 8px 0 #002e55,
+        15px 15px 25px rgba(0, 190, 255, 0.4);
+
+    animation: floating 4s ease-in-out infinite;
+}
+
+/* Floating Animation */
+
+@keyframes floating {
+
+    0%, 100% {
+        transform: perspective(600px)
+                   rotateX(10deg)
+                   rotateY(-8deg)
+                   translateY(0);
+    }
+
+    50% {
+        transform: perspective(600px)
+                   rotateX(10deg)
+                   rotateY(-8deg)
+                   translateY(-20px);
+    }
+}
+
+/* Text */
+
+h1 {
+    font-size: 35px;
+    margin-top: 35px;
+    font-weight: 600;
+}
+
+.description {
+    color: #9299a9;
+    font-size: 15px;
+    max-width: 450px;
+    line-height: 1.8;
+    margin: 12px auto 30px;
+}
+
+/* Buttons */
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.buttons a,
+.buttons button {
+
+    text-decoration: none;
+    border: none;
+    outline: none;
+
+    padding: 13px 28px;
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Home Button */
+
+.home-btn {
+    background: #00c8ff;
+    color: #07111d;
+    box-shadow: 0 0 20px rgba(0, 200, 255, 0.3);
+}
+
+.home-btn:hover {
+    background: white;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 200, 255, 0.4);
+}
+
+/* Back Button */
+
+.back-btn {
+    background: transparent;
+    border: 1px solid #343c50 !important;
+    color: white;
+}
+
+.back-btn:hover {
+    border-color: #00c8ff !important;
+    color: #00c8ff;
+    transform: translateY(-5px);
+}
+
+/* Floating Cubes */
+
+.cube {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+
+    border: 2px solid rgba(0, 200, 255, 0.6);
+
+    transform: rotate(45deg);
+    animation: cubeMove 6s ease-in-out infinite;
+}
+
+.cube1 {
+    top: 15%;
+    left: 15%;
+}
+
+.cube2 {
+    bottom: 18%;
+    right: 17%;
+    width: 65px;
+    height: 65px;
+    animation-delay: 2s;
+}
+
+.cube3 {
+    top: 20%;
+    right: 20%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 1s;
+}
+
+.cube4 {
+    bottom: 15%;
+    left: 20%;
+    width: 30px;
+    height: 30px;
+    animation-delay: 3s;
+}
+
+@keyframes cubeMove {
+
+    0%, 100% {
+        transform: rotate(45deg) translateY(0);
+        opacity: 0.4;
+    }
+
+    50% {
+        transform: rotate(135deg) translateY(-40px);
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+
+@media(max-width: 600px) {
+
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .description {
+        font-size: 13px;
+    }
+
+    .tag {
+        font-size: 10px;
+    }
+
+    .buttons a,
+    .buttons button {
+        padding: 12px 20px;
+        font-size: 12px;
+    }
+
+    .cube1 {
+        left: 7%;
+    }
+
+    .cube2 {
+        right: 7%;
+    }
+
+    .cube3 {
+        right: 8%;
+    }
+
+    .cube4 {
+        left: 8%;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    .error-code,
+    .cube {
+        animation: none;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Floating Cubes -->
+
+<div class="cube cube1"></div>
+<div class="cube cube2"></div>
+<div class="cube cube3"></div>
+<div class="cube cube4"></div>
+
+<!-- Main Content -->
+
+<div class="container">
+
+    <div class="tag">OOPS! PAGE NOT FOUND</div>
+
+    <div class="error-code">404</div>
+
+    <h1>Lost in Space?</h1>
+
+    <p class="description">
+        The page you're looking for doesn't exist or
+        may have been moved. Let's get you back on track.
+    </p>
+
+    <div class="buttons">
+
+        <a href="https://github.com/ArpitTech-756/Snake-Ladder" class="home-btn">
+            ⌂ Back to Home
+        </a>
+
+        <button class="back-btn" id="backBtn">
+            ← Go Back
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+document.getElementById("backBtn").addEventListener("click", function() {
+
+    if (window.history.length > 1) {
+        window.history.back();
+    } else {
+        window.location.href = "https://github.com/ArpitTech-756/Snake-Ladder";
+    }
+
+});
+
+</script>
+
+</body>
+</html>
